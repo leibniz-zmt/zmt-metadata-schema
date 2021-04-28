@@ -7,13 +7,13 @@
     "properties": {
         "acronym":      { "type": "string" },
         "name":         { "type": "string",
-            "description": "full project title"},
-            "type":         { "type": "string", 
-                "enum": ["DFG", "national", "international"]},
-                "coordinator":  { "$ref": "staff.json#" }, 
-                "institute":    { "type": "string", 
-                    "description": "place of coordination or project office" },
-                    "url":          { "type": "string" }
-                },
-                "required": ["acronym", "name", "coordinator", "url"]
-            }
+                          "description": "full project title"},
+        "type":         { "type": "string", 
+                          "enum": ["DFG", "national", "international"]},
+        "coordinator":  { "$ref": "staff.json#" }, 
+        "institute":    { "type": "string", 
+                          "description": "place of coordination or project office" },
+        "url":          { "type": "string" }
+    },
+    "required": ["acronym", "name", "coordinator", "url"]
+}
