@@ -1,0 +1,19 @@
+{  
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://https://gitlab.leibniz-zmt.de/digiz/database/zmt-metadata-schema/v1/project.schema.json",
+    "title": "Project",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "acronym":      { "type": "string" },
+        "name":         { "type": "string",
+            "description": "full project title"},
+            "type":         { "type": "string", 
+                "enum": ["DFG", "national", "international"]},
+                "coordinator":  { "$ref": "staff.json#" }, 
+                "institute":    { "type": "string", 
+                    "description": "place of coordination or project office" },
+                    "url":          { "type": "string" }
+                },
+                "required": ["acronym", "name", "coordinator", "url"]
+            }
