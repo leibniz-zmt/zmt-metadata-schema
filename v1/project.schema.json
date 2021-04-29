@@ -6,6 +6,8 @@
     "type": "object",
     "properties": {
         "acronym":      { "type": "string" },
+        "id":           { "type": "string",
+                          "description": "ZMT Project ID" },
         "name":         { "type": "string",
                           "description": "full project title"},
         "type":         { "type": "string", 
