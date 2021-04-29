@@ -1,0 +1,22 @@
+{  
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://https://gitlab.leibniz-zmt.de/digiz/database/zmt-metadata-schema/v1/dataset.schema.json",
+    "title": "Dataset",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "event":          { "type": "string" },
+        "title":          { "type": "string",
+                             "description": "full dataset title"},
+        "project-id":     { "type": "string" },
+        "authors":        { "type": "array",
+                            "items": { "type": "string" }},
+        "campaign":       { "type": "string" },
+        "pi":             { "type": "string", 
+                            "description": "principle investigator/originator"},
+        "method":         { "type": "string" },
+        "abstract":       { "type": "string" },
+        "comment":        { "type": "string" }
+    },
+    "required": ["title", "authors", "abstract"]
+}
