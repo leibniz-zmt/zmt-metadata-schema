@@ -1,0 +1,30 @@
+{
+  "title": "Dataspace",
+  "description": "A ZMT Dataspace is a folder in the ZMT DataCloud with a pre-defined structure",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "id": {
+      "type": "integer",
+      "description": "Integer ID of Dataspace (matches LDAP GID)",
+      "minimum": 10000
+    },
+    "archived": { "type": "boolean" },
+    "url": {
+      "type": "string",
+      "description": "link to folder on file system (CaosDB or cloud folder)"
+    },
+    "coordinator": {
+      "type": "object",
+      "properties": {
+        "firstname": { "type": "string", "description": "First name" },
+        "lastname": { "type": "string" },
+        "email": { "type": "string", "format": "email" }
+      },
+      "required": ["lastname", "email"]
+    },
+    "start_date": { "type": "string", "format": "date" },
+    "end_date": { "type": "string", "format": "date" }
+  },
+  "required": ["name", "id", "url", "coordinator"]
+}
