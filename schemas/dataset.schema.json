@@ -11,8 +11,22 @@
       "items": {
         "type": "object",
         "properties": {
-          "firstname": { "type": "string", "description": "First name" },
-          "lastname": { "type": "string" },
+          "full_name": {
+            "type": "string",
+            "description": "Full name (latin transcription, all UFT-8 characters allowed)"
+          },
+          "full_name_nonlatin": {
+            "type": "string",
+            "description": "Full name (non-latin alphabet)"
+          },
+          "family_name": {
+            "type": "string",
+            "description": "Family name (latin transcription)"
+          },
+          "given_name": {
+            "type": "string",
+            "description": "Given/other names (latin transcription)"
+          },
           "affiliation": { "type": "string" },
           "ORCID": {
             "type": "string",
@@ -21,7 +35,7 @@
           },
           "email": { "type": "string", "format": "email" }
         },
-        "required": ["lastname", "email"]
+        "required": ["full_name", "email"]
       },
       "minItems": 1,
       "uniqueItems": true
@@ -68,7 +82,7 @@
       "items": {
         "type": "object",
         "properties": {
-          "datetime": {
+          "event_datetime": {
             "type": "string",
             "format": "date-time"
           },
@@ -120,9 +134,12 @@
       "description": "https://wiki.pangaea.de/wiki/Project",
       "type": "object",
       "properties": {
-        "name": { "type": "string", "description": "full project title" },
-        "acronym": { "type": "string" },
-        "id": { "type": "string", "description": "ZMT Project ID" },
+        "project_name": {
+          "type": "string",
+          "description": "full project title"
+        },
+        "project_acronym": { "type": "string" },
+        "project_id": { "type": "string", "description": "ZMT Project ID" },
         "type": {
           "type": "string",
           "enum": ["DFG", "EU", "BMBF", "national", "international", "ZMT"]
@@ -139,14 +156,34 @@
         "coordinator": {
           "type": "object",
           "properties": {
-            "firstname": { "type": "string", "description": "First name" },
-            "lastname": { "type": "string" },
+            "full_name": {
+              "type": "string",
+              "description": "Full name (latin transcription, all UFT-8 characters allowed)"
+            },
+            "full_name_nonlatin": {
+              "type": "string",
+              "description": "Full name (non-latin alphabet)"
+            },
+            "family_name": {
+              "type": "string",
+              "description": "Family name (latin transcription)"
+            },
+            "given_name": {
+              "type": "string",
+              "description": "Given/other names (latin transcription)"
+            },
+            "affiliation": { "type": "string" },
+            "ORCID": {
+              "type": "string",
+              "description": "ORCID identifier as 16-digit number, e.g. 0000-0001-6233-1866",
+              "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{4}$"
+            },
             "email": { "type": "string", "format": "email" }
           },
-          "required": ["lastname", "email"]
+          "required": ["full_name", "email"]
         }
       },
-      "required": ["acronym", "name", "url", "start_date", "end_date"]
+      "required": ["acronym", "project_name", "url", "start_date", "end_date"]
     },
     "campaign": {
       "title": "Campaign",
@@ -164,9 +201,24 @@
           "type": "array",
           "items": {
             "type": "object",
+            "type": "object",
             "properties": {
-              "firstname": { "type": "string", "description": "First name" },
-              "lastname": { "type": "string" },
+              "full_name": {
+                "type": "string",
+                "description": "Full name (latin transcription, all UFT-8 characters allowed)"
+              },
+              "full_name_nonlatin": {
+                "type": "string",
+                "description": "Full name (non-latin alphabet)"
+              },
+              "family_name": {
+                "type": "string",
+                "description": "Family name (latin transcription)"
+              },
+              "given_name": {
+                "type": "string",
+                "description": "Given/other names (latin transcription)"
+              },
               "affiliation": { "type": "string" },
               "ORCID": {
                 "type": "string",
@@ -175,7 +227,7 @@
               },
               "email": { "type": "string", "format": "email" }
             },
-            "required": ["lastname", "email"]
+            "required": ["full_name", "email"]
           },
           "minItems": 1,
           "uniqueItems": true
@@ -188,7 +240,7 @@
       "description": "https://wiki.pangaea.de/wiki/Method",
       "type": "object",
       "properties": {
-        "name": {
+        "method_name": {
           "type": "string",
           "description": "full official name of tool/instrument/device/gear"
         },
