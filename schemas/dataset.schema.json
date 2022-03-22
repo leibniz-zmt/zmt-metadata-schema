@@ -204,8 +204,8 @@
           "description": "is unique and does not contain blanks; uses abbreviations instead of full names"
         },
         "optional_label": { "type": "string" },
-        "begin": { "type": "string", "format": "date" },
-        "end": { "type": "string", "format": "date" },
+        "start_date": { "type": "string", "format": "date" },
+        "end_date": { "type": "string", "format": "date" },
         "responsible_scientists": {
           "type": "array",
           "items": {
@@ -244,25 +244,40 @@
       }
     },
 
-    "method": {
-      "title": "Method",
-      "description": "https://wiki.pangaea.de/wiki/Method",
-      "type": "object",
-      "properties": {
-        "method_name": {
-          "type": "string",
-          "description": "full official name of tool/instrument/device/gear"
-        },
-        "abbreviation": {
-          "type": "string",
-          "description": "may be used for import in an event list to avoid misspellings"
-        },
-        "url": {
-          "type": "string",
-          "description": "should contain a web address, where an official description of the device can be found"
+    "methods": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "Method",
+        "description": "https://wiki.pangaea.de/wiki/Method",
+        "properties": {
+          "method_name": {
+            "type": "string",
+            "description": "full official name of tool/instrument/device/gear"
+          },
+          "abbreviation": {
+            "type": "string",
+            "description": "may be used for import in an event list to avoid misspellings"
+          },
+          "url": {
+            "type": "string",
+            "description": "should contain a web address, where an official description of the device can be found"
+          }
         }
       }
     },
+
+    "taxa": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "Taxon",
+        "properties": {
+          "taxon_name": { "type": "string" }
+        }
+      }
+    },
+
     "max_files": {
       "type": "integer",
       "description": "Maximum number of files to included by the CaosDB crawler",
