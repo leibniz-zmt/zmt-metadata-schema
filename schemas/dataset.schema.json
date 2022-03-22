@@ -145,7 +145,14 @@
         "project_id": { "type": "string", "description": "ZMT Project ID" },
         "project_type": {
           "type": "string",
-          "enum": ["DFG", "EU", "BMBF", "national", "international", "ZMT"]
+          "enum": [
+            "DFG",
+            "EU",
+            "BMBF",
+            "national",
+            "international",
+            "ZMT-internal"
+          ]
         },
 
         "institute": {
@@ -192,7 +199,7 @@
           "uniqueItems": true
         }
       },
-      "required": ["acronym", "project_name"]
+      "required": ["project_acronym", "project_name"]
     },
     "campaign": {
       "title": "Campaign",
