@@ -140,7 +140,7 @@
         },
         "project_acronym": { "type": "string" },
         "project_id": { "type": "string", "description": "ZMT Project ID" },
-        "type": {
+        "project_type": {
           "type": "string",
           "enum": ["DFG", "EU", "BMBF", "national", "international", "ZMT"]
         },
