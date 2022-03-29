@@ -1,0 +1,13 @@
+extern:
+   - Keyword
+   - Taxon
+   - full_name
+
+full_name:
+  parent: name
+
+title:
+  parent: name
+  
+Taxon:
+  parent: Keyword
