@@ -82,6 +82,12 @@
       "items": {
         "type": "object",
         "properties": {
+          "label": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
           "start_datetime": {
             "type": "string",
             "format": "date-time"
@@ -109,10 +115,13 @@
             "maximum": 20000,
             "description": "elevation in m"
           },
-
           "location": {
             "type": "string",
             "description": "geographical location as text (e.g., North Sea; Espoo, Finland)"
+          },
+          "igsn": {
+            "type": "string",
+            "description": "International Geo Sample Number (http://www.geosamples.org/aboutigsn)"
           }
         },
         "required": ["longitude", "latitude"]
@@ -249,11 +258,10 @@
       }
     },
 
-    "methods": {
+    "Method": {
       "type": "array",
       "items": {
         "type": "object",
-        "title": "Method",
         "description": "https://wiki.pangaea.de/wiki/Method",
         "properties": {
           "method_name": {
