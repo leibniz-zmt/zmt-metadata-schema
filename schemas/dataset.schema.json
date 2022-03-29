@@ -76,12 +76,11 @@
       "items": { "type": "string" }
     },
 
-    "events": {
+    "Event": {
       "type": "array",
       "description": "https://wiki.pangaea.de/wiki/Event",
       "items": {
         "type": "object",
-        "title": "Event",
         "properties": {
           "start_datetime": {
             "type": "string",
@@ -116,8 +115,7 @@
             "description": "geographical location as text (e.g., North Sea; Espoo, Finland)"
           }
         },
-        "minItems": 1,
-        "required": ["longitude", "latitude", "start_datetime"]
+        "required": ["longitude", "latitude"]
       }
     },
 
@@ -274,11 +272,10 @@
       }
     },
 
-    "taxa": {
+    "Taxon": {
       "type": "array",
       "items": {
         "type": "object",
-        "title": "Taxon",
         "properties": {
           "taxon_name": { "type": "string" }
         }
