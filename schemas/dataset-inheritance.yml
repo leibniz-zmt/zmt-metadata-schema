@@ -1,13 +1,18 @@
 extern:
-   - Keyword
-   - Taxon
-   - full_name
+- Keyword
+- Taxon
+- full_name
+- full_name_nonlatin
+- name
 
 full_name:
-  parent: name
+  inherit_from_obligatory:
+  - name
 
-title:
-  parent: name
-  
+full_name_nonlatin:
+  inherit_from_obligatory:
+  - name
+
 Taxon:
-  parent: Keyword
+  inherit_from_obligatory:
+  - Keyword
