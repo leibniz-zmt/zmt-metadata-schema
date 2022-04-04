@@ -71,9 +71,12 @@
       "description": "DOIs of related publications and/or datasets, e.g. 10.1000/182"
     },
 
-    "keywords": {
+    "Keyword": {
       "type": "array",
-      "items": { "type": "string" }
+      "description": "",
+      "items": {
+        "type": "object"
+      }
     },
 
     "Event": {
@@ -178,7 +181,7 @@
             "properties": {
               "full_name": {
                 "type": "string",
-                "description": "Full name (latin transcription, all UFT-8 characters allowed)"
+                "description": "Full name (latin transcription, all UTF-8 characters allowed)"
               },
               "full_name_nonlatin": {
                 "type": "string",
