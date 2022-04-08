@@ -147,11 +147,10 @@
       "description": "https://wiki.pangaea.de/wiki/Project",
       "type": "object",
       "properties": {
-        "project_name": {
+        "full_name": {
           "type": "string",
-          "description": "full project title"
+          "description": "Full name (latin transcription, all UTF-8 characters allowed)"
         },
-        "project_acronym": { "type": "string" },
         "project_id": { "type": "string", "description": "ZMT Project ID" },
         "project_type": {
           "type": "string",
