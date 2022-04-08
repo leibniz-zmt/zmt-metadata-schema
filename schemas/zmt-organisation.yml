@@ -1,0 +1,26 @@
+extern:
+- name
+- url
+- Dataset
+
+german_name:
+  datatype: TEXT
+  inherit_from_obligatory:
+  - name
+
+Department:
+  recommended_properties:
+    url:
+    german_name:
+
+
+WorkingGroup:
+  recommended_properties:
+    Department:
+    german_name:
+    url:
+
+Dataset:
+  recommended_properties:
+    WorkingGroup:
+    
