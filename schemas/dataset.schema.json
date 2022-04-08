@@ -293,6 +293,15 @@
       }
     },
 
+
+    "archived": {
+      "type": "boolean",
+      "description": "Has the dataset been archived?",
+      "default": false
+    },
+
+    "publication_date": { "type": "string", "format": "date" },
+
     "max_files": {
       "type": "integer",
       "description": "Maximum number of files to included by the CaosDB crawler",
