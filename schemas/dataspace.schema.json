@@ -3,11 +3,10 @@
   "description": "A ZMT Dataspace is a folder in the ZMT DataCloud with a pre-defined structure",
   "type": "object",
   "properties": {
-    "name": { "type": "string" },
-    "id": {
+    "dataspace_id": {
       "type": "integer",
       "description": "Integer ID of Dataspace (matches LDAP GID)",
-      "minimum": 10000
+      "minimum": 20000
     },
     "archived": { "type": "boolean" },
     "url": {
@@ -16,12 +15,26 @@
     },
     "coordinator": {
       "type": "object",
+      "title": "Person",
       "properties": {
-        "firstname": { "type": "string", "description": "First name" },
-        "lastname": { "type": "string" },
-        "email": { "type": "string", "format": "email" }
+        "full_name": {
+          "type": "string",
+          "description": "Full name (latin transcription, all UFT-8 characters allowed)"
+        },
+        "full_name_nonlatin": {
+          "type": "string",
+          "description": "Full name (non-latin alphabet)"
+        },
+        "family_name": {
+          "type": "string",
+          "description": "Family name (latin transcription)"
+        },
+        "given_name": {
+          "type": "string",
+          "description": "Given/other names (latin transcription)"
+        }
       },
-      "required": ["lastname", "email"]
+      "required": ["full_name", "email"]
     },
     "start_date": { "type": "string", "format": "date" },
     "end_date": { "type": "string", "format": "date" },
