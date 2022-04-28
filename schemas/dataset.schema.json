@@ -208,7 +208,7 @@
           "uniqueItems": true
         }
       },
-      "required": ["project_acronym", "project_name"]
+      "required": ["full_name"]
     },
     "campaign": {
       "title": "Campaign",
