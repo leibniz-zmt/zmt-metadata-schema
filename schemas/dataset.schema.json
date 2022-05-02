@@ -2,10 +2,11 @@
   "title": "Dataset",
   "description": "",
   "type": "object",
-
   "properties": {
-    "title": { "type": "string", "description": "full dataset title" },
-
+    "title": {
+      "type": "string",
+      "description": "full dataset title"
+    },
     "authors": {
       "type": "array",
       "items": {
@@ -28,40 +29,50 @@
             "type": "string",
             "description": "Given/other names (latin transcription)"
           },
-          "affiliation": { "type": "string" },
+          "affiliation": {
+            "type": "string"
+          },
           "ORCID": {
             "type": "string",
             "description": "ORCID identifier as 16-digit number, e.g. 0000-0001-6233-1866",
             "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{4}$"
           },
-          "email": { "type": "string", "format": "email" }
+          "email": {
+            "type": "string",
+            "format": "email"
+          }
         },
-        "required": ["full_name", "email"]
+        "required": [
+          "full_name",
+          "email"
+        ]
       },
       "minItems": 1,
       "uniqueItems": true
     },
-
     "abstract": {
       "type": "string",
       "minLength": 80,
       "maxLength": 1000,
       "description": "Abstract with at least 80 characters"
     },
-
-    "comment": { "type": "string" },
-
+    "comment": {
+      "type": "string"
+    },
     "license": {
       "type": "string",
-      "enum": ["CC-BY", "CC-BY-SA", "CC0", "restricted access"]
+      "enum": [
+        "CC-BY",
+        "CC-BY-SA",
+        "CC0",
+        "restricted access"
+      ]
     },
-
     "dataset_doi": {
       "type": "string",
       "pattern": "(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![%\"#? ])\\S)+)",
       "description": "Dataset DOI, e.g. 10.1594/PANGAEA.938740"
     },
-
     "related_to_dois": {
       "type": "array",
       "items": {
@@ -70,15 +81,17 @@
       },
       "description": "DOIs of related publications and/or datasets, e.g. 10.1000/182"
     },
-
     "Keyword": {
       "type": "array",
-      "description": "",
       "items": {
-        "type": "object"
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
       }
     },
-
     "Event": {
       "type": "array",
       "description": "https://wiki.pangaea.de/wiki/Event",
@@ -99,7 +112,6 @@
             "type": "string",
             "format": "date-time"
           },
-
           "longitude": {
             "type": "number",
             "minimum": -180,
@@ -127,31 +139,39 @@
             "description": "International Geo Sample Number (http://www.geosamples.org/aboutigsn)"
           }
         },
-        "required": ["longitude", "latitude"]
+        "required": [
+          "longitude",
+          "latitude",
+          "start_date"
+        ]
       }
     },
-
     "events_in_data": {
       "type": "boolean",
       "description": "Does the data contain additional information about timepoints and locations?"
     },
-
     "geojson": {
       "type": "string",
       "pattern": "",
       "description": "GeoJSON for complex geographic structures"
     },
-
     "project": {
       "title": "Project",
       "description": "https://wiki.pangaea.de/wiki/Project",
       "type": "object",
       "properties": {
+        "name": {
+          "type": "string", 
+          "description": "short name of project"
+        },
         "full_name": {
           "type": "string",
           "description": "Full name (latin transcription, all UTF-8 characters allowed)"
         },
-        "project_id": { "type": "string", "description": "ZMT Project ID" },
+        "project_id": {
+          "type": "string",
+          "description": "ZMT Project ID"
+        },
         "project_type": {
           "type": "string",
           "enum": [
@@ -163,15 +183,23 @@
             "ZMT-internal"
           ]
         },
-
         "institute": {
           "type": "string",
           "description": "place of coordination or project office",
           "default": "Leibniz Centre for Tropical Marine Research (ZMT)"
         },
-        "start_date": { "type": "string", "format": "date" },
-        "end_date": { "type": "string", "format": "date" },
-        "url": { "type": "string", "format": "uri" },
+        "start_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
         "coordinators": {
           "type": "array",
           "items": {
@@ -194,21 +222,29 @@
                 "type": "string",
                 "description": "Given/other names (latin transcription)"
               },
-              "affiliation": { "type": "string" },
+              "affiliation": {
+                "type": "string"
+              },
               "ORCID": {
                 "type": "string",
                 "description": "ORCID identifier as 16-digit number, e.g. 0000-0001-6233-1866",
                 "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{4}$"
               },
-              "email": { "type": "string", "format": "email" }
+              "email": {
+                "type": "string",
+                "format": "email"
+              }
             },
-            "required": ["full_name", "email"]
+            "required": [
+              "full_name",
+              "email"
+            ]
           },
           "minItems": 1,
           "uniqueItems": true
         }
       },
-      "required": ["full_name"]
+      "required": ["name", "full_name"]
     },
     "campaign": {
       "title": "Campaign",
@@ -219,9 +255,17 @@
           "type": "string",
           "description": "is unique and does not contain blanks; uses abbreviations instead of full names"
         },
-        "optional_label": { "type": "string" },
-        "start_date": { "type": "string", "format": "date" },
-        "end_date": { "type": "string", "format": "date" },
+        "optional_label": {
+          "type": "string"
+        },
+        "start_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date"
+        },
         "responsible_scientists": {
           "type": "array",
           "items": {
@@ -244,22 +288,29 @@
                 "type": "string",
                 "description": "Given/other names (latin transcription)"
               },
-              "affiliation": { "type": "string" },
+              "affiliation": {
+                "type": "string"
+              },
               "ORCID": {
                 "type": "string",
                 "description": "ORCID identifier as 16-digit number, e.g. 0000-0001-6233-1866",
                 "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{4}$"
               },
-              "email": { "type": "string", "format": "email" }
+              "email": {
+                "type": "string",
+                "format": "email"
+              }
             },
-            "required": ["full_name", "email"]
+            "required": [
+              "full_name",
+              "email"
+            ]
           },
           "minItems": 1,
           "uniqueItems": true
         }
       }
     },
-
     "Method": {
       "type": "array",
       "items": {
@@ -281,32 +332,35 @@
         }
       }
     },
-
     "Taxon": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "taxon_name": { "type": "string" }
+          "name": {
+            "type": "string"
+          }
         }
       }
     },
-
-
     "archived": {
       "type": "boolean",
       "description": "Has the dataset been archived?",
       "default": false
     },
-
-    "publication_date": { "type": "string", "format": "date" },
-
+    "publication_date": {
+      "type": "string",
+      "format": "date"
+    },
     "max_files": {
       "type": "integer",
       "description": "Maximum number of files to included by the CaosDB crawler",
       "default": 100
     }
   },
-
-  "required": ["title", "authors", "abstract"]
+  "required": [
+    "title",
+    "authors",
+    "abstract"
+  ]
 }
