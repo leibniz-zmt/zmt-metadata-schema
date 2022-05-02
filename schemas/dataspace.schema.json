@@ -32,7 +32,8 @@
         "given_name": {
           "type": "string",
           "description": "Given/other names (latin transcription)"
-        }
+        },
+        "email": { "type": "string", "format": "email" }
       },
       "required": ["full_name", "email"]
     },
@@ -40,5 +41,5 @@
     "end_date": { "type": "string", "format": "date" },
     "comment": { "type": "string" }
   },
-  "required": ["name", "id", "url", "coordinator"]
+  "required": ["dataspace_id", "url", "coordinator"]
 }
