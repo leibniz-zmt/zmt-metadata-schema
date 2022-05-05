@@ -142,7 +142,7 @@
         "required": [
           "longitude",
           "latitude",
-          "start_date"
+          "start_datetime"
         ]
       }
     },
