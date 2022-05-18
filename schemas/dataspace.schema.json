@@ -35,7 +35,12 @@
           "type": "string",
           "description": "Given/other names (latin transcription)"
         },
-        "email": { "type": "string", "format": "email" }
+        "email": { "type": "string", "format": "email" },
+        "ORCID": {
+            "type": "string",
+            "description": "ORCID identifier as 16-digit number, e.g. 0000-0001-6233-1866",
+            "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{4}$"
+          },
       },
       "required": ["full_name", "email"]
     },
