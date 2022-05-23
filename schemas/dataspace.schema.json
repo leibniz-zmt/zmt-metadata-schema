@@ -8,7 +8,7 @@
        "description": "name of dataspace (folder name)"
      },
      "dataspace_id": {
-      "type": "string",
+      "type": "string"
     },
     "archived": { "type": "boolean" },
     "url": {
@@ -40,7 +40,7 @@
             "type": "string",
             "description": "ORCID identifier as 16-digit number, e.g. 0000-0001-6233-1866",
             "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{4}$"
-          },
+        }
       },
       "required": ["full_name", "email"]
     },
