@@ -43,8 +43,7 @@
           }
         },
         "required": [
-          "full_name",
-          "email"
+          "full_name"
         ]
       },
       "minItems": 1,
@@ -236,8 +235,7 @@
               }
             },
             "required": [
-              "full_name",
-              "email"
+              "full_name"
             ]
           },
           "minItems": 1,
@@ -302,8 +300,7 @@
               }
             },
             "required": [
-              "full_name",
-              "email"
+              "full_name"
             ]
           },
           "minItems": 1,
