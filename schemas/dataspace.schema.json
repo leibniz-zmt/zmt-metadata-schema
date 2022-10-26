@@ -42,7 +42,7 @@
             "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{4}$"
         }
       },
-      "required": ["full_name", "email"]
+      "required": ["full_name"]
     },
     "start_date": { "type": "string", "format": "date" },
     "end_date": { "type": "string", "format": "date" },
