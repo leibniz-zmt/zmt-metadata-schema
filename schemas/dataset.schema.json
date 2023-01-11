@@ -349,6 +349,11 @@
       "type": "string",
       "format": "date"
     },
+    "publication_year": {
+      "type": "string",
+      "format": "date",
+      "description": "Year of publication. Redundant to publication_date and only for nicer display."
+    },
     "max_files": {
       "type": "integer",
       "description": "Maximum number of files to included by the CaosDB crawler",
