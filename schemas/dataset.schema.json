@@ -135,7 +135,7 @@
           },
           "igsn": {
             "type": "string",
-            "description": "International Geo Sample Number (http://www.geosamples.org/aboutigsn)"
+            "description": "International Generic Sample Number (https://www.igsn.org/)"
           }
         },
         "required": [
