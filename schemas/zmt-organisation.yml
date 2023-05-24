@@ -1,9 +1,9 @@
 extern:
 - name
 - url
-- Dataset
+- "Internal Dataset"
 
-german_name:
+German name:
   datatype: TEXT
   inherit_from_obligatory:
   - name
@@ -11,16 +11,15 @@ german_name:
 Department:
   recommended_properties:
     url:
-    german_name:
+    German name:
 
-
-WorkingGroup:
+Working Group:
   recommended_properties:
     Department:
-    german_name:
+    German name:
     url:
 
-Dataset:
+Internal Dataset:
   recommended_properties:
-    WorkingGroup:
+    Working Group:
     

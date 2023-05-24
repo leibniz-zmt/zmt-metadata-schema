@@ -1,18 +1,76 @@
 extern:
 - Keyword
 - Taxon
-- full_name
-- full_name_nonlatin
+- "Full name"
+- "Full name nonlatin"
 - name
+- "Internal Dataset"
+- title
+- Authors
+- Person
+- Abstract
+- Comment
+- License
+- Event
+- Project
+- Campaign
+- Method
+- DOI
+- url
 
-full_name:
+Full name:
   inherit_from_obligatory:
   - name
 
-full_name_nonlatin:
+Full name nonlatin:
   inherit_from_obligatory:
   - name
 
 Taxon:
   inherit_from_obligatory:
   - Keyword
+
+Relation:
+  description: Dataset, journal article, or any other type of related publication
+  recommended_properties:
+    url:
+Repository:
+  obligatory_properties:
+    url:
+  
+Dataset:
+  obligatory_properties:
+    title:
+    Authors:
+  recommended_properties:
+    Abstract:
+    Comment:
+    License:
+    Keyword:
+    Taxon:
+    Event:
+    Project:
+    Campaign:
+    Method:
+
+Internal Dataset:
+  inherit_from_obligatory:
+    - Dataset
+
+Published Dataset:
+  inherit_from_recommended:
+    - Dataset
+  obligatory_properties:
+    DOI:
+    Publication date:
+      datatype: DATETIME
+    Publication year:
+      datatype: DATETIME
+  recommended_properties:
+    Supplement to:
+      datatype: Relation
+    Related to:
+      datatype: LIST<Relation>
+    Further info:
+      datatype: LIST<Relation>
+    Repository:

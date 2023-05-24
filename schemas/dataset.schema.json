@@ -332,15 +332,6 @@
       "type": "boolean",
       "description": "Has the dataset been archived?",
       "default": false
-    },
-    "Publication date": {
-      "type": "string",
-      "format": "date"
-    },
-    "Publication year": {
-      "type": "string",
-      "format": "date",
-      "description": "Year of publication. Redundant to publication_date and only for nicer display."
     }
   },
   "required": [
