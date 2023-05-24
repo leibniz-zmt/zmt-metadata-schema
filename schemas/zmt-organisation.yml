@@ -22,4 +22,23 @@ Working Group:
 Internal Dataset:
   recommended_properties:
     Working Group:
+
+# Additional properties for data imported from an old legacy database
+legacy_dataset_id:
+  datatype: INTEGER
+legacy_department_id:
+  datatype: INTEGER
+legacy_workinggroup_id:
+  datatype: INTEGER
+legacy_involved_scientists_id:
+  datatype: INTEGER
+legacy_responsible_person_id:
+  datatype: INTEGER
+legacy_project_id:
+  datatype: INTEGER
+legacy_taxon_id:
+  datatype: LIST<INTEGER>
+legacy_keyword_id:
+  datatype: LIST<INTEGER>
+
     
