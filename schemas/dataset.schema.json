@@ -1,5 +1,5 @@
 {
-  "title": "Dataset",
+  "title": "Internal Dataset",
   "description": "",
   "type": "object",
   "properties": {
@@ -7,29 +7,29 @@
       "type": "string",
       "description": "full dataset title"
     },
-    "authors": {
+    "Authors": {
       "type": "array",
       "items": {
         "type": "object",
         "title": "Person",
         "properties": {
-          "full_name": {
+          "Full name": {
             "type": "string",
             "description": "Full name (latin transcription, all UFT-8 characters allowed)"
           },
-          "full_name_nonlatin": {
+          "Full name nonlatin": {
             "type": "string",
             "description": "Full name (non-latin alphabet)"
           },
-          "family_name": {
+          "Family name": {
             "type": "string",
             "description": "Family name (latin transcription)"
           },
-          "given_name": {
+          "Given name": {
             "type": "string",
             "description": "Given/other names (latin transcription)"
           },
-          "affiliation": {
+          "Affiliation": {
             "type": "string"
           },
           "ORCID": {
@@ -37,7 +37,7 @@
             "description": "ORCID identifier as 16-digit number, e.g. 0000-0001-6233-1866",
             "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{4}$"
           },
-          "email": {
+          "Email": {
             "type": "string",
             "format": "email"
           }
@@ -49,16 +49,16 @@
       "minItems": 1,
       "uniqueItems": true
     },
-    "abstract": {
+    "Abstract": {
       "type": "string",
       "minLength": 80,
       "maxLength": 1000,
       "description": "Abstract with at least 80 characters"
     },
-    "comment": {
+    "Comment": {
       "type": "string"
     },
-    "license": {
+    "License": {
       "type": "string",
       "enum": [
         "CC-BY",
@@ -67,18 +67,10 @@
         "restricted access"
       ]
     },
-    "dataset_doi": {
+    "DOI": {
       "type": "string",
       "pattern": "(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![%\"#? ])\\S)+)",
-      "description": "Dataset DOI, e.g. 10.1594/PANGAEA.938740"
-    },
-    "related_to_dois": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "pattern": "(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![%\"#? ])\\S)+)"
-      },
-      "description": "DOIs of related publications and/or datasets, e.g. 10.1000/182"
+      "description": "Dataset or publication DOI, e.g. 10.1594/PANGAEA.938740"
     },
     "Keyword": {
       "type": "array",
@@ -97,17 +89,17 @@
       "items": {
         "type": "object",
         "properties": {
-          "label": {
+          "Label": {
             "type": "string"
           },
-          "comment": {
+          "Comment": {
             "type": "string"
           },
-          "start_datetime": {
+          "Start datetime": {
             "type": "string",
             "format": "date-time"
           },
-          "end_datetime": {
+          "End datetime": {
             "type": "string",
             "format": "date-time"
           },
@@ -145,10 +137,6 @@
         ]
       }
     },
-    "events_in_data": {
-      "type": "boolean",
-      "description": "Does the data contain additional information about timepoints and locations?"
-    },
     "geojson": {
       "type": "string",
       "pattern": "",
@@ -163,15 +151,15 @@
           "type": "string", 
           "description": "short name of project"
         },
-        "full_name": {
+        "Full name": {
           "type": "string",
           "description": "Full name (latin transcription, all UTF-8 characters allowed)"
         },
-        "project_id": {
+        "Project ID": {
           "type": "string",
           "description": "ZMT Project ID"
         },
-        "project_type": {
+        "Project type": {
           "type": "string",
           "enum": [
             "DFG",
@@ -182,16 +170,16 @@
             "ZMT-internal"
           ]
         },
-        "institute": {
+        "Institute": {
           "type": "string",
           "description": "place of coordination or project office",
           "default": "Leibniz Centre for Tropical Marine Research (ZMT)"
         },
-        "start_date": {
+        "Start date": {
           "type": "string",
           "format": "date"
         },
-        "end_date": {
+        "End date": {
           "type": "string",
           "format": "date"
         },
@@ -199,29 +187,29 @@
           "type": "string",
           "format": "uri"
         },
-        "coordinators": {
+        "Coordinators": {
           "type": "array",
           "items": {
             "type": "object",
             "title": "Person",
             "properties": {
-              "full_name": {
+              "Full name": {
                 "type": "string",
                 "description": "Full name (latin transcription, all UTF-8 characters allowed)"
               },
-              "full_name_nonlatin": {
+              "Full name nonlatin": {
                 "type": "string",
                 "description": "Full name (non-latin alphabet)"
               },
-              "family_name": {
+              "Family name": {
                 "type": "string",
                 "description": "Family name (latin transcription)"
               },
-              "given_name": {
+              "Given name": {
                 "type": "string",
                 "description": "Given/other names (latin transcription)"
               },
-              "affiliation": {
+              "Affiliation": {
                 "type": "string"
               },
               "ORCID": {
@@ -229,7 +217,7 @@
                 "description": "ORCID identifier as 16-digit number, e.g. 0000-0001-6233-1866",
                 "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{4}$"
               },
-              "email": {
+              "Email": {
                 "type": "string",
                 "format": "email"
               }
@@ -244,49 +232,49 @@
       },
       "required": ["name", "full_name"]
     },
-    "campaign": {
+    "Campaign": {
       "title": "Campaign",
       "description": "https://wiki.pangaea.de/wiki/Campaign, synonyms: cruise, expedition, leg, ",
       "type": "object",
       "properties": {
-        "label": {
+        "Label": {
           "type": "string",
           "description": "is unique and does not contain blanks; uses abbreviations instead of full names"
         },
-        "optional_label": {
+        "Optional label": {
           "type": "string"
         },
-        "start_date": {
+        "Start date": {
           "type": "string",
           "format": "date"
         },
-        "end_date": {
+        "End date": {
           "type": "string",
           "format": "date"
         },
-        "responsible_scientists": {
+        "Responsible scientists": {
           "type": "array",
           "items": {
             "type": "object",
             "title": "Person",
             "properties": {
-              "full_name": {
+              "Full name": {
                 "type": "string",
                 "description": "Full name (latin transcription, all UFT-8 characters allowed)"
               },
-              "full_name_nonlatin": {
+              "Full name nonlatin": {
                 "type": "string",
                 "description": "Full name (non-latin alphabet)"
               },
-              "family_name": {
+              "Family name": {
                 "type": "string",
                 "description": "Family name (latin transcription)"
               },
-              "given_name": {
+              "Given name": {
                 "type": "string",
                 "description": "Given/other names (latin transcription)"
               },
-              "affiliation": {
+              "Affiliation": {
                 "type": "string"
               },
               "ORCID": {
@@ -294,7 +282,7 @@
                 "description": "ORCID identifier as 16-digit number, e.g. 0000-0001-6233-1866",
                 "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{4}$"
               },
-              "email": {
+              "Email": {
                 "type": "string",
                 "format": "email"
               }
@@ -314,11 +302,11 @@
         "type": "object",
         "description": "https://wiki.pangaea.de/wiki/Method",
         "properties": {
-          "method_name": {
+          "Method name": {
             "type": "string",
             "description": "full official name of tool/instrument/device/gear"
           },
-          "abbreviation": {
+          "Abbreviation": {
             "type": "string",
             "description": "may be used for import in an event list to avoid misspellings"
           },
@@ -345,19 +333,14 @@
       "description": "Has the dataset been archived?",
       "default": false
     },
-    "publication_date": {
+    "Publication date": {
       "type": "string",
       "format": "date"
     },
-    "publication_year": {
+    "Publication year": {
       "type": "string",
       "format": "date",
       "description": "Year of publication. Redundant to publication_date and only for nicer display."
-    },
-    "max_files": {
-      "type": "integer",
-      "description": "Maximum number of files to included by the CaosDB crawler",
-      "default": 100
     }
   },
   "required": [
