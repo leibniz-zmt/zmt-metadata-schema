@@ -49,6 +49,11 @@
       "minItems": 1,
       "uniqueItems": true
     },
+    "year_created": {
+      "type": "string",
+      "pattern": "^[0-9]{4}$",
+      "description": "Year of initial dataset creation"
+    },
     "abstract": {
       "type": "string",
       "minLength": 80,
@@ -63,8 +68,33 @@
       "enum": [
         "CC-BY",
         "CC-BY-SA",
-        "CC0",
-        "restricted access"
+        "CC-BY-NC",
+        "CC0"
+      ]
+    },
+    "access_restrictions": {
+      "type": "string",
+      "oneOf": [
+        {
+          "const": "open_access",
+          "title": "1. open access - (info: There are no restrictions on access to the data; anyone can view and download a copy)"
+        },
+        {
+          "const": "embargoed_access",
+          "title": "2. embargoed access - (info: Metadata of your dataset is published. However, the dataset is not accessible until after a specified period of time has elapsed.)"
+        },
+        {
+          "const": "mediated_access",
+          "title": "3. mediated access - (info: Metadata of your dataset is published. However, others won’t be able to access the data until after they apply and have their application approved)"
+        },
+        {
+          "const": "restricted_access",
+          "title": "4. closed access - (info: Metadata of your dataset is published but no access to data is provided.)"
+        },
+        {
+          "const": "closed_access",
+          "title": "5. no access - (info: Neither metadata nor data is published.)"
+        }
       ]
     },
     "dataset_doi": {
@@ -135,13 +165,14 @@
           },
           "igsn": {
             "type": "string",
-            "description": "International Geo Sample Number (http://www.geosamples.org/aboutigsn)"
+            "description": "International Generic Sample Number (https://www.igsn.org/)"
           }
         },
         "required": [
           "longitude",
           "latitude",
-          "start_datetime"
+          "start_datetime",
+          "elevation"
         ]
       }
     },
@@ -171,16 +202,21 @@
           "type": "string",
           "description": "ZMT Project ID"
         },
-        "project_type": {
+        "funding_agency": {
           "type": "string",
           "enum": [
-            "DFG",
-            "EU",
-            "BMBF",
-            "national",
-            "international",
-            "ZMT-internal"
+            "DFG (national)",
+            "BMBF (national)",
+            "BMZ (national)",
+            "other national - please specify",
+            "EU - Horizon Europe",
+            "other EU - please specify",
+            "international - please specify",
+            "internal (ZMT)"
           ]
+        },
+        "specify_funding": {
+          "type": "string"
         },
         "institute": {
           "type": "string",
@@ -242,7 +278,36 @@
           "uniqueItems": true
         }
       },
-      "required": ["name", "full_name"]
+                  "allOf": [
+    {
+      "if": {
+        "properties": { "funding_agency": { "const": "other national - please specify" } },
+        "required": ["specify_funding"]
+      },
+      "then": {
+        "properties": { "specify_funding": { "type": "string" } }
+      }
+    },
+    {
+      "if": {
+        "properties": { "funding_agency": { "const": "other EU - please specify" } },
+        "required": ["specify_funding"]
+      },
+      "then": {
+        "properties": { "specify_funding": { "type": "string" } }
+      }
+    },
+    {
+      "if": {
+        "properties": { "funding_agency": { "const": "international - please specify" } },
+        "required": ["specify_funding"]
+      },
+      "then": {
+        "properties": { "specify_funding": { "type": "string" } }
+      }
+    }
+  ],
+      "required": ["name", "full_name", "specify_funding"]
     },
     "campaign": {
       "title": "Campaign",
@@ -362,6 +427,7 @@
   },
   "required": [
     "title",
+    "year_created",
     "authors",
     "abstract"
   ]
