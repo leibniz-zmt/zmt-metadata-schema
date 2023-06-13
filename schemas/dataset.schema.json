@@ -149,7 +149,7 @@
                                 "description": "A seven digit unique identifier for the platform"
                             }
                         }
-                    },
+                    }
                 },
                 "required": [
                     "longitude",
