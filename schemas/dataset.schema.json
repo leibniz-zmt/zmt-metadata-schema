@@ -278,36 +278,7 @@
           "uniqueItems": true
         }
       },
-                  "allOf": [
-    {
-      "if": {
-        "properties": { "funding_agency": { "const": "other national - please specify" } },
-        "required": ["specify_funding"]
-      },
-      "then": {
-        "properties": { "specify_funding": { "type": "string" } }
-      }
-    },
-    {
-      "if": {
-        "properties": { "funding_agency": { "const": "other EU - please specify" } },
-        "required": ["specify_funding"]
-      },
-      "then": {
-        "properties": { "specify_funding": { "type": "string" } }
-      }
-    },
-    {
-      "if": {
-        "properties": { "funding_agency": { "const": "international - please specify" } },
-        "required": ["specify_funding"]
-      },
-      "then": {
-        "properties": { "specify_funding": { "type": "string" } }
-      }
-    }
-  ],
-      "required": ["name", "full_name", "specify_funding"]
+      "required": ["name", "full_name", "funding_agency"]
     },
     "campaign": {
       "title": "Campaign",
