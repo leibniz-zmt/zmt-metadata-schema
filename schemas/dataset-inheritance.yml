@@ -14,7 +14,6 @@ extern:
 - Event
 - Project
 - Campaign
-- Method
 - DOI
 - url
 
@@ -51,7 +50,6 @@ Dataset:
     Event:
     Project:
     Campaign:
-    Method:
 
 Internal Dataset:
   inherit_from_obligatory:

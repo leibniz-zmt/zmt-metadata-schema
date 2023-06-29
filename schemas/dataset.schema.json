@@ -125,6 +125,27 @@
                         "type": "string",
                         "description": "geographical location as text (e.g., North Sea; Espoo, Finland)"
                     },
+                    "Method": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "description": "https://wiki.pangaea.de/wiki/Method",
+                            "properties": {
+                                "Method name": {
+                                    "type": "string",
+                                    "description": "full official name of tool/instrument/device/gear"
+                                },
+                                "Abbreviation": {
+                                    "type": "string",
+                                    "description": "may be used for import in an event list to avoid misspellings"
+                                },
+                                "url": {
+                                    "type": "string",
+                                    "description": "should contain a web address, where an official description of the device can be found"
+                                }
+                            }
+                        }
+                    },
                     "igsn": {
                         "type": "string",
                         "description": "International Geo Sample Number (http://www.geosamples.org/aboutigsn)"
@@ -314,27 +335,6 @@
                     },
                     "minItems": 1,
                     "uniqueItems": true
-                }
-            }
-        },
-        "Method": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "description": "https://wiki.pangaea.de/wiki/Method",
-                "properties": {
-                    "Method name": {
-                        "type": "string",
-                        "description": "full official name of tool/instrument/device/gear"
-                    },
-                    "Abbreviation": {
-                        "type": "string",
-                        "description": "may be used for import in an event list to avoid misspellings"
-                    },
-                    "url": {
-                        "type": "string",
-                        "description": "should contain a web address, where an official description of the device can be found"
-                    }
                 }
             }
         },
