@@ -179,6 +179,45 @@
                 ]
             }
         },
+        "Parameter": {
+            "description": "PANGAEA parameters represent the measured variables.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "Abbreviation": {
+                        "type": "string",
+                        "description": "A short name or label to identify the parameter"
+                    },
+                    "Parameter type": {
+                        "type": "string",
+                        "description": "Indicates the data type of the parameter (string, numeric, datetime etc..)."
+                    },
+                    "Parameter unit": {
+                        "type": "string",
+                        "description": "The unit of measurement used with this parameter (e.g. m/s, kg etc...)."
+                    },
+                    "Term": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    },
+                    "Data series": {
+                        "type": "integer",
+                        "description": "The dataseries (column id)"
+                    },
+                    "Column number": {
+                        "type": "integer",
+                        "description": "The column in the data belonging to this parameter."
+                    }
+                }
+            }
+        },
         "geojson": {
             "type": "string",
             "pattern": "",
