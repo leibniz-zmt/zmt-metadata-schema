@@ -72,3 +72,6 @@ Published Dataset:
     Further info:
       datatype: LIST<Relation>
     Repository:
+    Citation:
+      datatype: TEXT
+      description: Full citation info as given by the publisher (cf. PANGAEA's citation)
