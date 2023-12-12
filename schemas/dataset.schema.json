@@ -107,19 +107,37 @@
                         "type": "number",
                         "minimum": -180,
                         "maximum": 180,
-                        "description": "longitude (W/E) in decimal degree (-180 to 180)"
+                        "description": "(start) longitude (W/E) in decimal degree (-180 to 180)"
                     },
                     "latitude": {
                         "type": "number",
                         "minimum": -90,
                         "maximum": 90,
-                        "description": "latitude (N/S) in decimal degree (-90 to 90)"
+                        "description": "(start) latitude (N/S) in decimal degree (-90 to 90)"
                     },
                     "elevation": {
                         "type": "number",
                         "minimum": -10000,
                         "maximum": 20000,
-                        "description": "elevation in m"
+                        "description": "(stop) elevation in m"
+                    },
+                    "longitude stop": {
+                        "type": "number",
+                        "minimum": -180,
+                        "maximum": 180,
+                        "description": "stop longitude (W/E) in decimal degree (-180 to 180)"
+                    },
+                    "latitude stop": {
+                        "type": "number",
+                        "minimum": -90,
+                        "maximum": 90,
+                        "description": "stop latitude (N/S) in decimal degree (-90 to 90)"
+                    },
+                    "elevation stop": {
+                        "type": "number",
+                        "minimum": -10000,
+                        "maximum": 20000,
+                        "description": "stop elevation in m"
                     },
                     "location": {
                         "type": "string",
